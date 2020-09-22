@@ -1,5 +1,5 @@
 export class personDto {
-    Id:number;
+    id:number;
     name:string;
     family:string;
-}
+}  

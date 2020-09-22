@@ -5,6 +5,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Root from './containers/root';
 import Form from './containers/root/person/formperson';
 import Table from './containers/root/person/Table';
+import FormUpdate from './containers/root/person/UpdateForm';
 
 
 /**
@@ -16,6 +17,7 @@ function Router() {
             <Route path="/" exact component={Root}/>
             <Route path="/form" exact component={Form}/>
             <Route path="/table" exact component={Table}/>
+            <Route path="/FormUpdate" exact component={FormUpdate}/>
         </BrowserRouter>
     );
 }

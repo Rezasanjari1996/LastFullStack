@@ -1,7 +1,7 @@
 import React, { FormEvent } from 'react';
 import { personDto } from "./../../../Method/interface";
 import { Create } from "../../../apis/person/create";
-import { create } from 'domain';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const Form:React.FC = () =>{
  
     async function onsubmitAdd(e:React.FormEvent){
@@ -21,14 +21,22 @@ const Form:React.FC = () =>{
     }
 
     return (
-        <div >
-           <form onSubmit={(e)=>onsubmitAdd(e)}>
-               id:<input type="text" id="id"/>
-               <br/>
-               name:<input type="text" id="name"/>
-               <br/>
-              family: <input type="text" id="family"/>
-               <button>create</button>
+        <div className="container-fluid text-right"  >
+           <form  onSubmit={(e)=>onsubmitAdd(e)}>
+               <div className="form-group">
+                   <label >    شناسه</label>
+                    <input className="form-control  "  type="text" id="id"/>
+               </div>
+
+               <div className="form-group">
+                    <label >    نام</label>
+                    <input className="form-control " type="text" id="name"/>
+               </div>
+               <div className="form-group">
+                    <label >نام خانوادگی</label>
+                    <input className="form-control " type="text" id="family"/>  
+               </div>
+               <button className="btn btn-primary">create</button>
            </form>
         </div>
     );
