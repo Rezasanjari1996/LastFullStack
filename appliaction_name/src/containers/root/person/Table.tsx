@@ -19,7 +19,8 @@ const Table:React.FC = () =>{
         console.log(list1);
         //setstate(respons.body.list.id);
         //console.log(respons.body.list.name);
-
+    }
+    function DeleteHandler(e:React.FormEvent){
 
     }
 
@@ -40,7 +41,7 @@ const Table:React.FC = () =>{
               <td scope="col" className="table-warning" style={{border: '1px solid black' ,textAlign: 'center'}}><h3>{ person.id }</h3></td>
               <td scope="col" className="table-primary" style={{border: '1px solid black' ,textAlign: 'center'}}><h3>{ person.name }</h3> </td>
               <td scope="col" className="table-success" style={{border: '1px solid black' ,textAlign: 'center'}}><h3>{ person.family}</h3></td>
-              <td><button className="btn btn-outline-danger" >حذف</button></td>
+              <td><button value={person.id} onClick={(e)=>DeleteHandler(e)} className="btn btn-outline-danger" >حذف</button></td>
               <td><button className="btn btn-outline-primary" >آپدیت</button></td>
             </tr>
 

@@ -1,15 +1,24 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { user } from 'src/Entities/user.entity';
+import { Repository } from 'typeorm';
 import { personDto } from "./../viewModel/PersonDto";
 
 @Injectable()
 export class PersonSService {
+    constructor(
+        @InjectRepository(user)
+        private usersRepository: Repository<user>,
+      ) {}
     public pepeol:personDto[]=[];
     Register(person:personDto){
         this.pepeol.push(person);
         console.log(this.pepeol);
     }
-    GetAll():personDto[]{
-        return this.pepeol;
+    async GetAll():Promise<user[]>{
+        //return this.pepeol;
+ let users= await this.usersRepository.find();
+ return users;
     }
     Update(person:personDto):boolean{
         console.log('personDto:',person);

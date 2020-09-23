@@ -12,8 +12,8 @@ export class PersonController {
         res.status(200).json({list:this.PersonService.pepeol})
     }
     @Get('getall')
-    getall(@Res() res:Response){
-        let pepeole=this.PersonService.GetAll();
+  async  getall(@Res() res:Response){
+        let pepeole=await this.PersonService.GetAll();
  res.status(200).json({list:pepeole}) ;
     }
     @Put('update')
