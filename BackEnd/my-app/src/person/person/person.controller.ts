@@ -17,8 +17,8 @@ export class PersonController {
  res.status(200).json({list:pepeole}) ;
     }
     @Put('update')
-    Edit(@Body() person:personDto,@Res() res:Response){
-        if(this.PersonService.Update(person)){
+    async Edit(@Body() person:personDto,@Res() res:Response){
+        if(await this.PersonService.Update(person)){
             res.status(200).json({person:person})
         }
         else
@@ -29,9 +29,9 @@ export class PersonController {
 
     }
     @Delete('delete/:id')
-    remove(@Param('id') id:number,@Res() res:Response){
+    async remove(@Param('id') id:number,@Res() res:Response){
         console.log(id);
-        if(this.PersonService.Delete(id)) {
+        if(await this.PersonService.Delete(id)) {
             res.status(200).json({des:"ok"})
         }
         res.status(404).json({
