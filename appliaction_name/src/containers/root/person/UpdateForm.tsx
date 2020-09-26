@@ -2,7 +2,7 @@ import React, { FormEvent } from 'react';
 import { personDto } from "./../../../Method/interface";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Update } from '../../../apis/person/update';
-const FormUpdate:React.FC = () =>{
+const FormUpdate:React.FC = (person) =>{
  
     async function onsubmitupdate(e:React.FormEvent){
         e.preventDefault();
